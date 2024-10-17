@@ -39,7 +39,7 @@ public class IT2DVILLARINOROOM {
     }
        public void addroom(){
         Scanner sc = new Scanner(System.in);
-        config conf = new config();
+       
         
         
         System.out.print(" ID: ");
@@ -54,11 +54,9 @@ public class IT2DVILLARINOROOM {
         String rrate;
         rrate = sc.next();
 
-        String sql;
-        sql = "INSERT INTO tbl_room(r_id, r_number, r_type, r_status, r_rate ) VALUES (?, ?, ?, ?,?)";
-
-
-        conf.addRecord(sql, rnumber, rtype,rstatus, rrate);
+        String sql = "INSERT INTO tbl_room(r_number, r_type, r_status, r_rate ) VALUES (?, ?, ?, ?)";
+        config conf = new config();
+        conf.addRecord(sql, rnumber, rtype, rstatus, rrate);
 
 
     }
